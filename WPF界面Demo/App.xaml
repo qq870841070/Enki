@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:WPF界面Demo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--主页功能按钮-->
+        <Style x:Key="FontAwesome">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/#FontAwesome" />
+        </Style>
     </Application.Resources>
 </Application>

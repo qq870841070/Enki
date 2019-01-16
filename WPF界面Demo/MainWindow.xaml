@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF界面Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="617.4" Width="800"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"     
+        AllowsTransparency="True"  
+        BorderThickness="24" 
+        >
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="24" Color="#FF858484" Direction="90" ShadowDepth="3"/>
+    </Window.Effect>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Name="topPanel" Grid.Row="0" Background="#0094FF">
+            <Canvas Width="{Binding ActualWidth,ElementName=topPanel}" Height="30">
+                <TextBlock Canvas.Left="10" Canvas.Top="5" FontSize="14" Foreground="White">快速复习</TextBlock>
+                <StackPanel Orientation="Horizontal" Canvas.Right="0">
+                    <Label Foreground="White" Width="30" Height="30" FontSize="16" HorizontalContentAlignment="Center" >━</Label>
+                    <Label Foreground="White" Width="30" Height="30" FontSize="16" HorizontalContentAlignment="Center">✖</Label>
+                </StackPanel>
+            </Canvas>
+            <TextBlock HorizontalAlignment="Center" Foreground="White" FontSize="40">Caption</TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Foreground="White">英 ['kæpʃn]</TextBlock>
+                <TextBlock Style="{StaticResource FontAwesome}" VerticalAlignment="Center" Foreground="White" FontSize="16" Margin="5,0,0,0">&#xf027;</TextBlock>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
