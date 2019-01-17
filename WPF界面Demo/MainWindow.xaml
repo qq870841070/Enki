@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF界面Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="617.4" Width="800"
+        Title="MainWindow" Height="640" Width="800"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"     
         AllowsTransparency="True"  
         BorderThickness="24" 
+        xmlns:vc="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts"
+        Loaded="Window_Loaded"
         >
     <Window.Effect>
         <DropShadowEffect BlurRadius="24" Color="#FF858484" Direction="90" ShadowDepth="3"/>
     </Window.Effect>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
@@ -34,5 +37,19 @@
                 <TextBlock Style="{StaticResource FontAwesome}" VerticalAlignment="Center" Foreground="White" FontSize="16" Margin="5,0,0,0">&#xf027;</TextBlock>
             </StackPanel>
         </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Source="./images/orange1.jpg" Width="180" Height="180"></Image>
+                <Image Source="./images/orange2.jpg" Width="180" Height="180" Margin="50,0,50,0"></Image>
+                <Image Source="./images/orange3.jpg" Width="180" Height="180"></Image>
+            </StackPanel>
+            <vc:Chart Grid.Row="1" Name="chart"  View3D="False" BorderBrush="Transparent"></vc:Chart>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Center" Foreground="#666" Margin="10">提示：空格显示释义 回车进行下一个</TextBlock>
+        </Grid>
     </Grid>
 </Window>
